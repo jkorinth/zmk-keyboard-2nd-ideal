@@ -1,0 +1,22 @@
+/*
+ * Copyright (c) 2026 J. Korinth <jnsk@tuta.io>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+ #include "2nd_ideal.dtsi"
+
+ &default_transform {
+	 col-offset = <5>;
+ };
+
+ &kscan0 {
+	 col-gpios
+	 	= <&pca9555 12 GPIO_ACTIVE_LOW>
+		, <&pca9555 11 GPIO_ACTIVE_LOW>
+		, <&pca9555 10 GPIO_ACTIVE_LOW>
+		, <&pca9555 9 GPIO_ACTIVE_LOW>
+		, <&pca9555 8 GPIO_ACTIVE_LOW>
+		;
+
+ };

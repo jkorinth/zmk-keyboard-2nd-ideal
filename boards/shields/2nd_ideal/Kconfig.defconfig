@@ -1,0 +1,16 @@
+if SHIELD_2NDIDEAL_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "2nd Ideal"
+
+endif
+
+if SHIELD_2NDIDEAL_LEFT || SHIELD_2NDIDEAL_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+config I2C
+	default y
+
+endif

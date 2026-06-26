@@ -1,0 +1,41 @@
+/*
+ * Copyright (c) 2026 J. Korinth <jnsk@tuta.io>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+#include <zephyr/dt-bindings/led/led.h>
+
+/ {
+	chosen {
+		zmk,underglow = &led_strip;
+	};
+	aliases {
+		led-strip = &led_strip;
+	};
+};
+
+&xiao_spi {
+	status = "okay";
+	cs-gpios = <&gpio1 15 GPIO_ACTIVE_LOW>;
+	led_strip: ws2812@0 {
+		compatible = "worldsemi,ws2812-spi";
+		reg = <0>;
+		spi-max-frequency = <4000000>;
+		chain-length = <7>;
+		color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+		spi-one-frame = <0x70>;
+		spi-zero-frame = <0x40>;
+	};
+};
+
+&xiao_i2c {
+	status = "okay";
+	pca9555: pca9555@24 {
+		compatible = "nxp,pca9555";
+		gpio-controller;
+		reg = <0x24>;
+		int-gpios = <&gpio1 11 GPIO_ACTIVE_LOW>;
+		ngpios = <16>;
+		#gpio-cells = <2>;
+	};
+};

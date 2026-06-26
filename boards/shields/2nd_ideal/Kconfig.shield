@@ -1,0 +1,8 @@
+# Copyright (c) 2026 J. Korinth <jnsk@tuta.io>
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+config SHIELD_2NDIDEAL_LEFT
+	def_bool $(shields_list_contains,2nd_ideal_left)
+
+config SHIELD_2NDIDEAL_RIGHT
+	def_bool $(shields_list_contains,2nd_ideal_right)

@@ -1,0 +1,14 @@
+file_format: "1"
+id: 2nd_ideal
+name: 2nd Ideal
+type: shield
+url: https://github.com/jkorinth/kbds/
+requires: [xiao_ble]
+exposes: []
+features:
+  - keys
+  - underglow
+  - studio
+siblings:
+  - 2nd_ideal_left
+  - 2nd_ideal_right
