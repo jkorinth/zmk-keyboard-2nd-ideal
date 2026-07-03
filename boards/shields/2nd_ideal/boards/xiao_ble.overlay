@@ -34,8 +34,14 @@
 		compatible = "nxp,pca9555";
 		gpio-controller;
 		reg = <0x24>;
-		int-gpios = <&gpio1 11 GPIO_ACTIVE_LOW>;
+		int-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 		ngpios = <16>;
 		#gpio-cells = <2>;
+
+		js5208_hog: js5208_hog {
+			gpio-hog;
+			gpios = <5 GPIO_ACTIVE_HIGH>;
+			output-low;
+		};
 	};
 };

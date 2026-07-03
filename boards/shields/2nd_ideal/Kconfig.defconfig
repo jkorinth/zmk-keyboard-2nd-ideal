@@ -1,16 +1,47 @@
-if SHIELD_2NDIDEAL_LEFT
+if SHIELD_2NDIDEAL_LEFT || SHIELD_2NDIDEAL_RIGHT
 
 config ZMK_KEYBOARD_NAME
 	default "2nd Ideal"
 
-endif
-
-if SHIELD_2NDIDEAL_LEFT || SHIELD_2NDIDEAL_RIGHT
-
-config ZMK_SPLIT
+config GPIO
 	default y
 
 config I2C
 	default y
 
+config LED_STRIP
+	default y
+
+config SPI
+	default y
+
+config ZMK_RGB_UNDERGLOW
+	default n
+
+config ZMK_SPLIT
+	default y
+
 endif
+
+
+if SHIELD_2NDIDEAL_LEFT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+config ZMK_USB
+	default y
+
+config ZMK_BLE
+	default y
+
+endif
+
+
+if SHIELD_2NDIDEAL_LEFT
+
+config ZMK_USB
+	default n
+
+endif
+

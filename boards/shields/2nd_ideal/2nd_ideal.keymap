@@ -7,10 +7,15 @@
 
 		 default_layer {
 			 bindings = <
-				 &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P
-				 &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp M 
-				 &kp Y &kp X &kp C &kp V &kp B &kp N &kp M &kp A &kp A &kp A
-			 >;
-		 };
+&kp Q    &kp W &kp E &kp R  &kp T                &kp Y  &kp U  &kp I     &kp O     &kp P
+&kp A    &kp S &kp D &kp F  &kp G                &kp H  &kp J  &kp K     &kp L     &kp SEMI
+&kp Y    &kp X &kp C &kp V  &kp B  &kp N4 &kp N5 &kp N  &kp M  &kp COMMA &kp DOT   &kp FSLH
+                     &kp N0 &kp N1               &kp N2 &kp N3
+         &kp UP                                                          &kp UP
+&kp LEFT &kp ENTER &kp RIGHT                                   &kp LEFT  &kp ENTER &kp RIGHT
+         &kp DOWN                                                        &kp DOWN
+		 	>;
+		 	sensor-bindings = <&inc_dec_kp A B>;
+	 };
 	};
 };
