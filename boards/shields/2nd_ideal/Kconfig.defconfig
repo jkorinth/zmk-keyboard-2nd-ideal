@@ -21,6 +21,9 @@ config ZMK_RGB_UNDERGLOW
 config ZMK_SPLIT
 	default y
 
+config ZMK_BLE
+	default y
+
 endif
 
 
@@ -32,13 +35,10 @@ config ZMK_SPLIT_ROLE_CENTRAL
 config ZMK_USB
 	default y
 
-config ZMK_BLE
-	default y
-
 endif
 
 
-if SHIELD_2NDIDEAL_LEFT
+if SHIELD_2NDIDEAL_RIGHT
 
 config ZMK_USB
 	default n
