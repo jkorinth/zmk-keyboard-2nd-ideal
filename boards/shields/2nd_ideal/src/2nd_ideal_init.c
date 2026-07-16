@@ -13,27 +13,23 @@ static struct k_work_delayable _pca_init_work;
 static void scnd_ideal_pca_init(struct k_work *work) {
 	ARG_UNUSED(work);
 
-	printk("deferred task is running now!\n");
-	LOG_ERR("error message from deferred task");
-
 	// apply inversion to all channels
 	static uint8_t buf[] = { 0x04, 0xff, 0xff };
-	//static uint8_t buf[] = { 0x04, 0x00, 0x00 };
-	LOG_WRN("[pca9555] setting inversion register to invert\n");
+	LOG_WRN("[%s] setting inversion register", __func__);
 	int ret = i2c_write_dt(&_pca, buf, sizeof(buf));
 
 	if (ret) {
-		LOG_ERR("[pca9555] could not write inversion registers: %d\n", ret);
+		LOG_ERR("[%s] could not write inversion registers: %d", __func__, ret);
 	} else {
 		buf[0] = 0xaf; buf[1] = 0xfe;
 		ret = i2c_read_dt(&_pca, buf, 2);
 		if (ret) {
-			LOG_ERR("[pca9555] could not read inversion registers: %d\n", ret);
+			LOG_ERR("[%s] could not read inversion registers: %d", __func__, ret);
 		} else {
-			LOG_WRN("[pca9555] read values: 0x%02x %02x\n", buf[0], buf[1]);
+			LOG_INF("[%s] read values: 0x%02x %02x", __func__, buf[0], buf[1]);
 		}
 	}
-	LOG_ERR("[pca9555] preconfig: %d\n", ret);
+	LOG_DBG("[%s] preconfig: %d\n", __func__, ret);
 }
 
 static int scnd_ideal_init(void)
@@ -43,7 +39,7 @@ static int scnd_ideal_init(void)
 	}
 
 	k_work_init_delayable(&_pca_init_work, scnd_ideal_pca_init);
-	k_work_schedule(&_pca_init_work, K_MSEC(1000));
+	k_work_schedule(&_pca_init_work, K_MSEC(2000));
 
 	return 0;
 }
