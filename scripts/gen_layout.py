@@ -98,7 +98,7 @@ def thumbs(start_col=THUMB_COL, angles=THUMB_ANGLES, row=ROWS + 1, sizes=THUMB_S
 def rotenc():
     return [
         # Key(col=5, row=1, x=5.15, y=1.15, r=THUMB_ANGLES[-1], w=0.7, h=0.7)
-        Key(col=5, row=1, x=5.15, y=1.15, r=THUMB_ANGLES[-1])
+        Key(col=5, row=2, x=5.15, y=1.15, r=THUMB_ANGLES[-1])
     ]
 
 
