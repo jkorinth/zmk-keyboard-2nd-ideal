@@ -83,7 +83,7 @@ RC(4,0) RC(4,4) RC(4,2)                                                RC(4,5) R
 		compatible = "alps,ec11";
 		a-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 		b-gpios = <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-		steps = <80>;
+		resolution = <4>;
 		status = "disabled";
 	};
 
@@ -91,14 +91,14 @@ RC(4,0) RC(4,4) RC(4,2)                                                RC(4,5) R
 		compatible = "alps,ec11";
 		a-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 		b-gpios = <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-		steps = <80>;
+		resolution = <4>;
 		status = "disabled";
 	};
 
 	sensors: sensors {
 		compatible = "zmk,keymap-sensors";
 		sensors = <&left_encoder &right_encoder>;
-		triggers-per-rotation = <20>;
+		triggers-per-rotation = <24>;
 	};
 
 	aliases {
