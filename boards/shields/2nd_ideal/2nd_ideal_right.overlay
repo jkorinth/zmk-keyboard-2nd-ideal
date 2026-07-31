@@ -4,8 +4,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
- #include "2nd_ideal.dtsi"
+#include "2nd_ideal.dtsi"
 
- &default_transform {
-	 col-offset = <5>;
- };
+&default_transform {
+	col-offset = <5>;
+};
+
+&right_encoder {
+	status = "okay";
+};

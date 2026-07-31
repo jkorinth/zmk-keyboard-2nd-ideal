@@ -35,6 +35,9 @@ config ZMK_SPLIT_ROLE_CENTRAL
 config ZMK_USB
 	default y
 
+config BT_PERIPHERAL
+	default n
+
 endif
 
 

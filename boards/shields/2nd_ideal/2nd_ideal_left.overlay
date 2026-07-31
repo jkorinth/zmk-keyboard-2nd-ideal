@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
- #include "2nd_ideal.dtsi"
+#include "2nd_ideal.dtsi"
 
- // nothing to see here, move along
+&left_encoder {
+	status = "okay";
+};
